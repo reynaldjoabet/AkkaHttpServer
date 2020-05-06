@@ -35,6 +35,11 @@ object AkkaHttpServer extends App with Directives with JsonSupport {
         }
       },
       get{
+        path("getCourses"){//return course list
+          complete(StatusCodes.OK,StudentRepository.getCourses)
+        }
+      },
+      get{
         path("deleteAll"){// delete all students from in-memory store
           complete(StatusCodes.OK,s"${StudentRepository.deleteAll()}")
         }
