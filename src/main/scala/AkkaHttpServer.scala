@@ -26,7 +26,7 @@ object AkkaHttpServer extends App with Directives with JsonSupport {
   },
   get{
     path("all"){//all students as JSON
-      complete(StatusCodes.OK,{StudentRepository.all.toList})
+      complete(StatusCodes.OK,{StudentRepository.all})
     }
   },
       get{
